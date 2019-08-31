@@ -1,6 +1,6 @@
 # WORK IN PROGRESS!!
 
-# Created a dynamic form and tab component, a few more pageElement compoenents and about 4 pages so far. No backend for now, so I use some hardcoded values to test at this point.
+# Created a dynamic form and tab component, a few more pageElement components and about 4 pages so far. No backend for now, so I use some hardcoded values to test at this point. The backend will be build in NodeJS soon, but I wanted to create some visuals first
 
 
 # B2bOffersFrontend

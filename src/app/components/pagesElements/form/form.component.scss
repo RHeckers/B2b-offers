@@ -1,0 +1,39 @@
+@import '../../../../globalStyles/variables.scss';
+
+form {
+    padding: 10px;
+
+    .formButtonContainer {
+        display: flex;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.formSectionTitle {
+    margin: 0 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $main-color;
+}
+
+.formSection {
+    padding: 0px;
+}
+
+.formButtonContainer {
+    padding-top: 15px;
+
+    #submitBtn{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .formButtonContainer {
+        padding-top: 15px;
+
+        #submitBtn{
+            width: 100%;
+        }
+    }
+}

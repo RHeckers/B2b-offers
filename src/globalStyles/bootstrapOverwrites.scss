@@ -1,0 +1,91 @@
+@import './variables.scss';
+
+.navbar-brand {
+     cursor: pointer;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+     font-weight: 600;
+}
+
+.form-group {
+     margin: 15px 0px;
+}
+
+.btn-primary {
+     outline: none;
+     box-shadow: none;
+     border: none !important;
+     background-color: $main-color;
+}
+.btn-primary:active {
+     outline: none;
+     box-shadow: none;
+     border: none !important;
+     background-color: $main-color !important;
+}
+.btn-primary:focus {
+     outline: none;
+     box-shadow: none;
+     border: none !important;
+     background-color: $main-color !important;
+}
+.btn-primary:disabled {
+     cursor: not-allowed; 
+     outline: none;
+     box-shadow: none;
+     background-color: $main-color-disabled;
+}
+.btn-primary:hover {
+     outline: none;
+     box-shadow: none;
+     background-color: $main-color-darker;
+}
+
+.btn-secondary {
+     outline: none;
+     box-shadow: none;
+     border: none !important;
+     background-color: $main-teal;
+}
+.btn-secondary:active {
+     outline: none;
+     box-shadow: none;
+     border: none !important;
+     background-color: $main-teal;
+}
+.btn-secondary:focus {
+     outline: none;
+     box-shadow: none;
+     border: none !important;
+     background-color: $main-teal;
+}
+.btn-secondary:disabled {
+     cursor: not-allowed; 
+     outline: none;
+     box-shadow: none;
+     background-color: $main-color-disabled;
+}
+.btn-secondary:hover {
+     outline: none;
+     box-shadow: none;
+     background-color: $main-teal-darker;
+}
+
+.col-form-label {
+     text-transform: uppercase;
+     font-size: 14px;
+     font-weight: bold;
+}
+
+.input-group-prepend, .form-control, .form-control-plaintext{
+     margin-top: -4px;
+}
+
+
+// Mobile screen bootstrap overwrites
+@media only screen and (max-width: 600px) {
+     h2 {
+          font-size: 20px;
+     }
+}

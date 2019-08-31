@@ -1,0 +1,16 @@
+<div class="registerformContainer">
+    <app-header-box-with-scroll [title]='"register"'>
+        <div class="formHolder">
+            <app-form [questions]='registerFormQuestions' [bindObj]='bindObj' [labelColSize]='"col-sm-3"'
+                [inputColSize]='"col-sm-9"' (formSubmited)='regstirFormSubmited($event)'>
+            </app-form>
+
+            <app-or-divider></app-or-divider>
+
+            <div class="socialMediaLogin">
+                <div class='socialSignin'><i class="fa fa-google"></i><label>Sign up with Google</label></div>
+                <div class='socialSignin socialsigninFb'><i class="fa fa-facebook"></i><label>Sign up with Facebook</label></div>
+            </div>
+        </div>
+    </app-header-box-with-scroll>
+</div>

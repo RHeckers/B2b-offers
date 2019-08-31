@@ -1,0 +1,36 @@
+<div class="cardList">
+
+    <!-- Filter and sort HTML -->
+    <div *ngIf="includeFilters" class="filtersbarContainer">
+        <div class="filterContainer">
+            <div class="filterHeader" (click)="toggleFilterScreen(filterScreen, false)">
+                <i class="fas fa-filter fa-xs"></i> filter
+            </div>
+            <div #filterScreen class="filterScreen">
+                <app-form [questions]='filterFormQustions' [bindObj]='{}' [hideDefaultBtn]='true'
+                            [labelColSize]='"col-6 col-md-4"' [inputColSize]='"col-6 col-md-8"'>
+                </app-form>
+            </div>
+        </div>
+        <div class="filterContainer sortContainer">
+            <div class="filterHeader" (click)="toggleFilterScreen(sortScreen, true)">
+                <i class="fas fa-sort"></i> sort
+            </div>
+            <div #sortScreen class="filterScreen sortScreen">
+                <app-form [questions]='filterFormQustions' [bindObj]='{}' [hideDefaultBtn]='true'
+                        [labelColSize]='"col-6 col-md-4"' [inputColSize]='"col-6 col-md-8"'>
+                </app-form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cards list HTML -->
+    <div class="cardHolder" *ngFor="let request of requests">
+        <app-request-list-card 
+            (showDetailsOutput)="showDetailsInput($event)"
+            (makeOfferOutput)="makeOfferInput($event)"
+            [request]='request' 
+            [dataSizeClass]='dataSizeClass'>
+        </app-request-list-card>
+    </div>
+</div>

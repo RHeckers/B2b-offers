@@ -1,0 +1,71 @@
+<form (ngSubmit)="formSubmit()" (change)='formChanged()' [formGroup]="form" *ngIf="form">
+
+  <ng-container *ngIf="formSections">
+    <div class="formSectionsContainer row">
+      <ng-container *ngFor="let section of formSections">
+        <ng-container *ngIf="!section.conditional">
+            <div [class]="section.sectionWidth ? section.sectionWidth + ' formSection' : 'col-sm-6 formSection'">
+                <h5 class="formSectionTitle">{{section.title}}</h5>
+                <ng-container *ngFor="let question of questions">
+                  <ng-container *ngIf="question.section === section.title">
+                    <div>
+                      <ng-container [ngSwitch]="question.questionType">
+                        <ng-container *ngSwitchCase="'input'">
+                          <app-input [question]='question' [form]='form' [bindObj]='bindObj' [displayForm]='displayForm'
+                            [labelColSize]='section.labelColSize ? section.labelColSize : labelColSize'
+                            [inputColSize]='section.inputColSize ? section.inputColSize : inputColSize'>
+                          </app-input>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'textarea'">
+      
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'select'">
+                          <app-select [question]='question' [form]='form' [bindObj]='bindObj'
+                            [selectOptionsEnum]='question.selectOptionsEnum' [displayForm]='displayForm'
+                            [labelColSize]='section.labelColSize ? section.labelColSize : labelColSize'
+                            [inputColSize]='section.inputColSize ? section.inputColSize : inputColSize'>
+                          </app-select>
+                        </ng-container>
+                      </ng-container>
+                    </div>
+                  </ng-container>
+      
+                </ng-container>
+            </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="!formSections">
+    <div *ngFor="let question of questions">
+      <ng-container [ngSwitch]="question.questionType">
+        <ng-container *ngSwitchCase="'input'">
+          <app-input [question]='question' [form]='form' [bindObj]='bindObj' 
+            [labelColSize]='labelColSize' [blockDesign]='blockDesign' [displayForm]='displayForm'
+            [inputColSize]='inputColSize'>
+          </app-input>
+        </ng-container>
+        <ng-container *ngSwitchCase="'textarea'">
+
+        </ng-container>
+        <ng-container *ngSwitchCase="'select'">
+          <app-select [question]='question' [form]='form' 
+            [bindObj]='bindObj' [blockDesign]='blockDesign'
+            [selectOptionsEnum]='question.selectOptionsEnum' [displayForm]='displayForm'
+            [labelColSize]='question.labelColSize ? question.labelColSize : labelColSize'
+            [inputColSize]='question.inputColSize ? question.inputColSize : inputColSize'>
+          </app-select>
+        </ng-container>
+      </ng-container>
+
+    </div>
+  </ng-container>
+
+  <div class="form-group row" *ngIf="!hideDefaultBtn">
+    <div class="col-sm-12 formButtonContainer" [ngStyle]="{'justify-content': buttonPositioning}">
+      <button [ngStyle]="{'margin-left': !formSections ? '15px' : '0px'}" type="submit" class="btn btn-primary"
+        id='submitBtn' [disabled]='!form.valid'>{{btnText}}</button>
+    </div>
+  </div>
+</form>

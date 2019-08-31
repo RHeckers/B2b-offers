@@ -1,0 +1,63 @@
+@import '../../../../globalStyles/variables.scss';
+
+.detailedRequestPageContainer {
+    padding: 15px;
+    box-shadow: $box-shadow;
+    border-radius: 5px;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .fa-star {
+            cursor: pointer;
+            font-size: 20px;
+        }
+    }
+
+    h4, h5 {
+        margin: 0;
+    }
+
+    .title {
+        text-transform: uppercase;
+        background: $main-blue;
+        padding: 5px 7.5px;
+        color: white;
+        border-radius: 5px;
+        margin: 0px;
+    }
+
+    .offerBtn {
+        background: white;
+    }
+
+    .receivedOffersSection {
+        margin: 0px 11px;
+
+        .receivedOffersContainer {
+            margin: 5px 5px 15px 5px;
+            box-shadow: $box-shadow;
+            width: calc(100% - 10px);
+        }
+
+        .receivedOfferContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            margin: 0px 0px;
+            border-bottom: 1px solid rgba(0,0,0,.2);
+
+            label {
+                font-size: 18px;
+                padding-right: 10px;
+                font-weight: bold;
+            }
+        }
+        .receivedOfferContainer:last-child {
+            border-bottom: none;
+        }
+    }
+}

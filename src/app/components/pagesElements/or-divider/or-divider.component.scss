@@ -1,0 +1,21 @@
+@import '../../../../globalStyles/variables.scss';
+
+.dividerContainer{
+    padding: 25px; 
+    .divider {
+        height: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid $main-color-ligther;   
+    }
+
+    span {
+        z-index: 100;
+        background: $main-color-ligther;
+        padding: 10px;
+        border-radius: 50%;
+        color: white
+    }
+
+}

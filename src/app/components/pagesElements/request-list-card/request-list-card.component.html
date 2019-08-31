@@ -1,0 +1,29 @@
+<div class="requestcardContainer">
+  <header class="requestcardHeader">
+    <h5 class="requestcardTitle">{{request.title}}</h5>
+    <h5 title="Add to favorites" class="requestcardTotal"><i class="far fa-star"></i></h5>
+  </header>
+  <div class="requestcardBody row">
+    <label title="What the user wants cheaper" 
+           [class]="'requestcardInfo col-form-label ' + dataSizeClass">
+           <i class="far fa-handshake"></i>Product: <p>{{request.shortDescription}}</p>
+    </label>
+    <label title="What the user currently pais for this product or service" 
+           [class]="'requestcardInfo col-form-label ' + dataSizeClass">
+              <i class="fas fa-money-bill-alt"></i>Current price: <p>${{request.unitPrice}} / month</p>
+    </label>
+    <label title="What the user wants to pay for this product or service" 
+           [class]="'requestcardInfo col-form-label ' + dataSizeClass">
+              <i class="fas fa-percent"></i>Target price: <p>${{request.unitTargetPrice}} / month</p>
+    </label>
+    <label title="The total or yearly value of the request" 
+           [class]="'requestcardInfo col-form-label ' + dataSizeClass">
+           <i class="fas fa-coins"></i>Total value: <p>${{request.totalValue}}</p>
+    </label>
+
+    <div class="col-12 requestcardBtns">
+      <button class="btn btn-primary requestBtn" (click)="makeAnOfferClicked()">Make offer <i class="fas fa-file-signature"></i></button>
+      <button class="btn btn-secondary" (click)="moreDetailsClicked()">More details <i class="fas fa-info"></i></button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+<div [class]="blockDesign ? 'form-group' : 'form-group row'" [formGroup]="form">
+
+  <!-- In case it is no fineprint checkbox -->
+  <ng-container *ngIf="!question.fineprintCheckbox">
+    <!-- Label -->
+    <label [for]="question.bindTo" [class]="blockDesign ? 'col-12' : labelColSize + ' col-form-label'">{{question.label}}</label>
+
+    <!-- Inputs -->
+    <div [class]="blockDesign ? 'col-12' : inputColSize">
+
+      <div class="input-group" *ngIf="question.inputType === 'currency'">
+        <div class="input-group-prepend" *ngIf="!displayForm">
+          <div class="input-group-text">$</div>
+        </div>
+          <input (keyup)='bindValue()' [readonly]='displayForm' [class]="displayForm ? 'form-control-plaintext' : 'form-control'" 
+                 [type]="question.inputType" [formControlName]="question.bindTo" 
+                 [value]='displayForm ? "$" + bindObj[question.bindTo] : bindObj[question.bindTo] '
+                 [id]="question.bindTo" [placeholder]="!question.validators.required ? '( Optional )' : ''">
+      </div>
+
+      <!-- Non Checkbox input HTML -->
+      <input (keyup)='bindValue()' [readonly]='displayForm' [class]="displayForm ? 'form-control-plaintext' : 'form-control'" 
+       *ngIf="question.inputType !== 'checkbox' && question.inputType !== 'currency'" 
+       [type]="question.inputType" [formControlName]="question.bindTo"
+        class="form-control-plaintext" [id]="question.bindTo" [placeholder]="!question.validators.required ? '( Optional )' : ''">
+      <div>
+        <span class='errorMsg'
+          *ngIf="!form.controls[question.bindTo].valid && form.controls[question.bindTo].dirty">{{question.errorMessage}}</span>
+      </div>
+
+      <!-- Checkbox HTML -->
+      <div class="checkBoxContainer" *ngIf="question.inputType === 'checkbox'">
+          <section class="check">
+              <span class="container">
+                <input  #checkbox (click)='bindCheckboxValue(checkbox)' [formControlName]="question.bindTo" [id]="question.bindTo" [type]="question.inputType"
+                  style="opacity:0" class="ubuntu-touch" [checked]='bindObj[question.bindTo] ? true : false'>
+                <label for="ubuntu-touch" class="state"></label>
+                <label for="ubuntu-touch" class="switch"></label>
+              </span>
+              <div>
+                <span class='errorMsg'
+                  *ngIf="!form.controls[question.bindTo].valid && form.controls[question.bindTo].dirty">{{question.errorMessage}}</span>
+              </div>
+            </section>
+      </div>
+    </div>
+  </ng-container>
+
+  <!-- In case that is a fineprint checkbox -->
+  <ng-container *ngIf="question.fineprintCheckbox">
+    <div class="col-sm-12">
+      <input #checkbox [checked]='bindObj[question.bindTo] ? true : false' (click)='bindCheckboxValue(checkbox)'
+        [type]="question.inputType" [formControlName]="question.bindTo" class="fineprintCheckbox"
+        [id]="question.bindTo">
+      <span *ngIf="question.fineprintCheckbox" [class]="">{{question.label}}</span>
+      <div>
+        <span class='errorMsg'
+          *ngIf="!form.controls[question.bindTo].valid && form.controls[question.bindTo].dirty">{{question.errorMessage}}</span>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <a *ngIf="question.finreprintRoute" [routerLink]='question.finreprintRoute'>{{question.textForFineprintLink}}</a>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,15 @@
+// Color variables
+$main-color: #343a40;
+$main-color-ligther: lighten(#343a40, 20%);
+$main-color-darker: darken(#343a40, 20%);
+$main-color-disabled: lighten(#343a40, 3%);
+$background: #fbfbff;
+$main-teal: #177575;
+$main-teal-ligther: ligthen(#177575, 20%);
+$main-teal-darker: darken(#177575, 8%);
+$underline-color: #214169;
+$main-blue: #214169;
+$main-blue-darker: darken(#214169, 8%);
+
+// Shadow
+$box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 2px 3px rgba(0,0,0,.2);

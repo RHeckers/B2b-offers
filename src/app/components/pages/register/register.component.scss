@@ -1,0 +1,18 @@
+@import '../../../../globalStyles/variables.scss';
+
+.registerformContainer {
+    width: 50%;
+    margin: 25px 25%;
+}
+
+.formHolder {
+    background: $background;
+}
+
+@media only screen and (max-width: 1200px) {
+    .registerformContainer {
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 40px;
+    }
+}

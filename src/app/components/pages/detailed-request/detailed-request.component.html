@@ -1,0 +1,38 @@
+<div class="detailedRequestPageContainer">
+    <header class="title">
+        <h4>I WANT CHEAPER {{detailedRequest.productName}}</h4>
+        <i class="far fa-star"></i>
+    </header>
+
+    <app-form [questions]='requestForm' [formSections]='requestFormSections' [bindObj]='detailedRequest'
+        [hideDefaultBtn]='true' [displayForm]='true' [labelColSize]='"col-12 col-md-4"'
+        [inputColSize]='"col-12 col-md-8"'>
+    </app-form>
+
+    <div class="receivedOffersSection">
+        <header class="title">
+            <h5>Received offers</h5>
+            <button class="btn offerBtn">Make offer <i class="fas fa-file-signature d-none d-md-inline-block"></i></button>
+        </header>
+
+        <div class="receivedOffersContainer">
+            <ng-container *ngFor="let item of detailedRequest.receivedOffers">
+                <div class="receivedOfferContainer row">
+                    <div class="col-12 col-md-3">
+                        <label>Offered Price: </label><span>${{item.unitPrice}}</span>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label>Match: </label><span>{{item.percentageMatch}}%</span>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label>Received on: </label><span>{{item.receivedOn}}</span>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <label>In negotiation: </label><span>{{item.negotiation ? 'Yes' : 'No'}}</span>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+    </div>
+</div>

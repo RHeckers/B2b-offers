@@ -1,0 +1,83 @@
+@import '../../../../globalStyles/variables.scss';
+
+.cardHolder {
+   margin-bottom: 10px;
+}
+
+.filtersbarContainer {
+   position: relative;
+   margin-bottom: 10px;
+
+   .input-group {
+      width: 20%;
+   }
+}
+
+.filterContainer {
+   display: inline-block;
+   background: $main-blue;
+   width: 50%;
+   
+   .filterHeader {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: white;
+      width: 100%;
+      padding: 3px;
+      cursor: pointer;
+   }
+
+   .filterScreen {
+      width: 100%;
+      z-index: -1;
+      background: lighten($main-blue, 70%);
+      height: auto;
+      position: absolute;
+      // display: none;
+      overflow: hidden;
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition-property: all;
+      transition-duration: 0.5s;
+   }
+
+   .sortScreen {
+      background: lighten($main-teal, 70%);
+      right: 0;
+   }
+
+   .showScreen {
+      transform: scaleY(1);
+      // display: block;
+      width: 100%;
+      opacity: 1;
+      z-index: 100;
+   }
+
+   i {
+      padding-right: 8px;
+   }
+}
+.filterContainer:hover {
+   background: $main-blue-darker;
+   // transform: scale(1.01);
+}
+
+.sortContainer {
+   background: $main-teal;
+}
+.sortContainer:hover {
+   background: $main-teal-darker;
+   // transform: scale(1.02);
+}
+
+@media only screen and (max-width: 1024px) {
+   .filterContainer {
+      .filterScreen {
+         width: 100% !important;
+      }
+   }
+
+}

@@ -1,0 +1,30 @@
+<div class="homePageContainer">
+    <div class="favoritesContainer sideContainer">
+        <h5>FAVORITES</h5>
+        
+        <ng-container *ngFor="let item of [1, 2, 3, 4, 5]">
+            <div class="sideBarItem">
+                <span>test favorite title</span>
+                <i title="Click on the star to remove the item from your favorites list" class="far fa-star"></i>
+            </div>
+        </ng-container>
+    </div>
+    <div class="requestsContainer">
+        <app-request-list 
+            (makeOfferOutput)="navigateToMakeOffer($event)"
+            (showDetailsOutput)="navigateToDetails($event)"
+            [requests]='requests' 
+            [dataSizeClass]='dataSizeClass'
+            [includeFilters]='true'>
+        </app-request-list>
+    </div>
+    <div class="lastViewedContainer sideContainer">
+        <h5>LAST VIEWED</h5>
+        <ng-container *ngFor="let item of [1, 2, 3, 4, 5]">
+                <div class="sideBarItem">
+                    <span>test last viewed title</span>
+                    
+                </div>
+        </ng-container>
+    </div>
+</div>

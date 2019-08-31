@@ -1,0 +1,18 @@
+@import '../../../../globalStyles/variables.scss';
+
+.loginformContainer {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 25px;
+}
+
+.formHolder {
+    background: $background;
+}
+
+@media only screen and (max-width: 1200px) {
+    .loginformContainer {
+        width: 90%;
+        margin-left: 5%;
+    }
+}

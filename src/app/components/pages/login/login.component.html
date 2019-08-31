@@ -1,0 +1,16 @@
+<div class="loginformContainer">
+    <app-header-box-with-scroll [title]='"login"'>
+        <div class="formHolder">
+            <app-form [questions]='loginFormQuestions' [bindObj]='{}'
+                [labelColSize]='"col-sm-3"' [inputColSize]='"col-sm-9"' (formSubmited)='loginFormSubmited($event)'>
+            </app-form>
+    
+            <app-or-divider></app-or-divider>
+    
+            <div class="socialMediaLogin">
+                <div class='socialSignin'><i class="fa fa-google"></i><label>Sign in with Google</label></div>
+                <div class='socialSignin socialsigninFb'><i class="fa fa-facebook"></i><label>Sign in with Facebook</label></div>
+            </div>
+        </div>
+    </app-header-box-with-scroll>
+</div>

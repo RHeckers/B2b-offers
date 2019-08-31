@@ -1,0 +1,58 @@
+@import '../../../../globalStyles/variables.scss';
+
+.homePageContainer {
+    width: 100%;
+    // margin-left: 17.5%;
+    display: flex;
+    justify-content: space-between;
+
+    .requestsContainer {
+        width: 65%;
+        padding: 0 5px;
+    }
+
+    .sideContainer {
+        width: 16%;
+
+        h5 {
+            width: 100%;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        .sideBarItem {
+            // border-bottom: 1px solid $main-color;
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 10px;
+            margin-bottom: 7px;
+            border-radius: 5px;
+            color: black;
+            box-shadow: $box-shadow;
+            cursor: grab;
+
+            .fa-star {
+                color: gold;
+                cursor: pointer;
+            }
+
+            span {
+                cursor: pointer;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1024px) {
+    .requestsContainer {
+        width: 100% !important;
+    }
+
+    .sideContainer {
+        display: none;
+    }
+}
+

@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import './globalStyles/bootstrapOverwrites.scss';
+
+body{
+    font-family: 'Montserrat', 'Raleway', sans-serif;
+
+    ::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f3f0f0; 
+      }
+       
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: $main-color-ligther; 
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: $main-color; 
+      }
+
+      label {
+        color: $main-color;
+      }
+}
+
+.disabledSelect {
+  background-color: transparent !important;
+  color: black;
+  padding-left: 0;
+  border: none;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.socialSignin {
+  height: 35px;
+  width: 250px;
+  color: white;
+  background: #4791bf;
+  border-radius: 5px;
+  margin: 10px;
+
+  i {
+      margin-top: 8px;
+      margin-left: 10px;
+      // margin-right: 10px;
+      height: 20px;
+      width: 25px;
+      border-right: 1px solid white;
+  }
+
+  label {
+      // padding-right: 45px;
+      width: calc(100% - 35px);
+      text-align: center;
+      color: $main-color
+  }
+
+}
+
+.socialsigninFb {
+  background: darkblue;
+}
+
+.socialMediaLogin {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 25px;
+  padding-bottom: 35px;
+}
+

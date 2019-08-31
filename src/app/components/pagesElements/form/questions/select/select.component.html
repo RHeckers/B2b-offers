@@ -1,0 +1,17 @@
+<div [class]="blockDesign ? 'form-group' : 'form-group row'" [formGroup]="form">
+  <label [for]="question.bindTo" [class]="blockDesign ? 'col-12' : labelColSize + ' col-form-label'">{{question.label}}</label>
+
+  <!-- Inputs -->
+  <div [class]="blockDesign ? 'col-12' : inputColSize">
+    <select #selectElem (change)="selectionMade(selectElem)" 
+           [class]="displayForm ? 'form-control disabledSelect' : 'form-control'" 
+           [value]='bindObj[question.bindTo]' [formControlName]="question.bindTo" [id]="question.bindTo">
+      <ng-container *ngFor="let option of selectOptions; index as key">
+        <option [value]='option.key'>{{option.value}}</option>
+      </ng-container>
+    </select>
+    <div>
+      <span class='errorMsg'
+        *ngIf="!form.controls[question.bindTo].valid && form.controls[question.bindTo].dirty">{{question.errorMessage}}</span>
+    </div>
+</div>

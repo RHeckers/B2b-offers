@@ -1,0 +1,19 @@
+<div class="tabscontainer">
+  <header class="tabsHeader" [ngStyle]="{'justify-content': tabPositioning}">
+    <ng-container *ngFor="let tab of items">
+        <label class="tab" (click)="tabClicked($event, tab)" [routerLink]="tab.route" routerLinkActive="activeTab" >
+          {{tab.title}}
+        </label>
+    </ng-container>
+  </header>
+  <div class="tabsBody">
+    <ng-container *ngFor="let tab of items">
+      <ng-container *ngIf="tab.route === activeRoute">
+        <div class="fadeInAnimation">
+          <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{$implicit: tab}"></ng-template>
+        </div>
+      </ng-container>
+    </ng-container>
+     
+  </div>
+</div>

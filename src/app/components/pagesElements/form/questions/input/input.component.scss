@@ -1,0 +1,125 @@
+.fineprintCheckbox {
+    margin-top: 6px;
+    margin-right: 10px;
+}
+
+.errorMsg {
+    text-transform: lowercase;
+    font-size: 14px;
+    color: red;
+}
+
+.checkBoxContainer {
+  height: 25px;
+}
+
+.pen {
+    max-width: 400px;
+    width: 100%;
+    margin: 50px auto 0;
+    position: relative;
+  }
+  
+  .check {
+    text-align: center;
+    transform: scale(0.5);
+    position: absolute;
+    left: -20px;
+    top: -20px;
+  }
+  .container {
+    width: 150px;
+    height: 70px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+    display: block;
+    position: relative;
+    margin: 0 auto;
+  }
+  .state {
+    width: 150px;
+    height: 70px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: #8a8787;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  .state:after {
+    content: "";
+    background: url("https://vsxed.github.io/ubuntu-touch-checkbox/img/sprite.png")
+      0 0 no-repeat;
+    position: absolute;
+    bottom: 18px;
+    left: 25px;
+    width: 30px;
+    height: 30px;
+  }
+  .state:before {
+    content: "";
+    background: url("https://vsxed.github.io/ubuntu-touch-checkbox/img/sprite.png") -34px
+      0 no-repeat;
+    position: absolute;
+    bottom: 18px;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+  }
+  .switch {
+    width: 150px;
+    height: 70px;
+    overflow: hidden;
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    left: 0;
+    top: 0;
+  }
+  .switch:after {
+    content: "";
+    display: block;
+    width: 219px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: translateX(-69px);
+    -moz-transform: translateX(-69px);
+    transform: translateX(-69px);
+    height: 73px;
+    background: url("https://vsxed.github.io/ubuntu-touch-checkbox/img/sprite.png")
+      0 -31px no-repeat;
+  }
+  .ubuntu-touch {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    margin: 0;
+    z-index: 2;
+  }
+  .ubuntu-touch:checked ~ .state {
+    background: #0e9c34;
+  }
+  .ubuntu-touch:checked ~ .switch:after {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  

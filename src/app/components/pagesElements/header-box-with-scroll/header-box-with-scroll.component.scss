@@ -1,0 +1,17 @@
+@import '../../../../globalStyles/variables.scss';
+
+h2 {
+    margin: 0;
+    text-transform: uppercase
+}
+
+.registerFormHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: $main-color-ligther;
+    color: white;
+    border-radius: 5px 5px 0 0;
+    // margin-bottom: 10px;
+}
